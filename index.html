@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Lawrencia ❤️</title>
+<style>
+:root{--bg1:#ffe4ec;--bg2:#ffc2d4;--ink:#5c1a2b;--soft:#9b4a60;--red:#e63956;--pink:#ff7aa2;--card:rgba(255,255,255,.78);--shadow:0 10px 30px rgba(230,57,86,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#3a1220;--bg2:#5a1c33;--ink:#ffe4ec;--soft:#ffb3c7;--card:rgba(255,255,255,.1);--shadow:0 10px 30px rgba(0,0,0,.4)}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{min-height:100dvh;display:flex;flex-direction:column;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#hearts span{position:absolute;bottom:-40px;opacity:.5;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 20px;position:relative;z-index:1}
+.stage{display:none;width:100%;max-width:520px;text-align:center;animation:in .7s ease both}
+.stage.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+h1{font-size:clamp(1.9rem,8vw,2.8rem);line-height:1.2;margin:0 0 14px;color:var(--red)}
+h2{font-size:clamp(1.6rem,7vw,2.3rem);line-height:1.25;margin:0 0 8px;color:var(--red)}
+p.sub{color:var(--soft);font-size:1.1rem;margin:0 0 22px}
+.big{font-size:clamp(1.2rem,5vw,1.5rem);line-height:1.5;margin:14px 0 24px}
+.heart{font-size:3.4rem;display:inline-block;animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+.btn{font:inherit;font-size:1.25rem;font-weight:bold;border:0;border-radius:999px;padding:16px 34px;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--pink),var(--red));box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.btn:active{transform:scale(.95)}
+.btn.alt{background:var(--card);color:var(--red);border:2px solid var(--pink)}
+.row{display:flex;gap:16px;justify-content:center;align-items:center;min-height:70px;flex-wrap:wrap}
+#no{transition:left .35s cubic-bezier(.34,1.56,.64,1),top .35s cubic-bezier(.34,1.56,.64,1),transform .3s;z-index:20}
+#tease{min-height:1.8em;font-size:1.25rem;color:var(--soft);margin-top:18px;font-style:italic}
+.pop{animation:pop .4s ease both}
+@keyframes pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.env{background:var(--card);border-radius:24px;padding:20px 10px;box-shadow:var(--shadow);cursor:pointer;border:2px solid transparent;transition:transform .25s;font:inherit;color:var(--ink);min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.env:active{transform:scale(.95)}
+.env .ic{font-size:2.8rem;transition:transform .4s}
+.env b{font-size:1.02rem;line-height:1.25}
+.env.done{border-color:var(--pink)}
+.env.done .ic{transform:rotate(-8deg) scale(1.1)}
+#modal{position:fixed;inset:0;background:rgba(92,26,43,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;backdrop-filter:blur(4px)}
+#modal.on{display:flex;animation:in .35s ease both}
+.letter{background:#fff9fb;color:#5c1a2b;border-radius:28px;padding:30px 24px;max-width:460px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.35);text-align:center;max-height:85dvh;overflow:auto}
+.letter h3{margin:0 0 14px;color:var(--red);font-size:1.4rem}
+.letter p{font-size:1.2rem;line-height:1.6;margin:0 0 22px}
+.opt{display:block;width:100%;margin:12px 0;text-align:left;font:inherit;font-size:1.2rem;padding:16px 20px;border-radius:20px;border:2px solid var(--pink);background:var(--card);color:var(--ink);box-shadow:var(--shadow);cursor:pointer;transition:transform .2s}
+.opt:active{transform:scale(.97)}
+.opt.right{background:#ffd6e0;border-color:var(--red)}
+.opt.lock{pointer-events:none}
+#fb{min-height:1.6em;font-size:1.25rem;color:var(--red);font-weight:bold;margin:14px 0}
+.prog{color:var(--soft);margin-bottom:10px}
+footer{position:relative;z-index:1;text-align:center;padding:14px 16px calc(16px + env(safe-area-inset-bottom,0px));font-size:.95rem;color:var(--soft)}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:100}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+<canvas id="cf"></canvas>
+<main>
+
+<section class="stage on" id="s1">
+  <div class="heart">❤️</div>
+  <div id="ask">
+    <h1>Lawrencia, will you still be my baby forever? Even from far? ❤️</h1>
+    <div class="row" id="btnrow">
+      <button class="btn" id="yes">YES</button>
+      <button class="btn alt" id="no">NO</button>
+    </div>
+    <div id="tease"></div>
+  </div>
+  <div id="yeah" class="hide">
+    <h1>I KNEW IT! ❤️</h1>
+    <p class="big">And I saw what you saved me as on your phone... <b>Lifeline</b>. So I’m stuck with you forever now.</p>
+    <button class="btn" id="to2">Continue to your surprise →</button>
+  </div>
+</section>
+
+<section class="stage" id="s2">
+  <h2>For my Lawrencia, from your Lifeline...</h2>
+  <p class="sub">(Yes, I know that’s how you saved me 😂)</p>
+  <div class="grid" id="grid"></div>
+  <button class="btn hide" id="to3">One last test →</button>
+</section>
+
+<section class="stage" id="s3">
+  <h2>Final Test – Do you still remember me?</h2>
+  <div class="prog" id="prog"></div>
+  <div id="quiz"></div>
+  <div id="fb"></div>
+  <button class="btn hide" id="next">Next →</button>
+  <div id="result" class="hide"></div>
+</section>
+
+</main>
+
+<div id="modal"><div class="letter"><h3 id="lt"></h3><p id="lp"></p><button class="btn" id="close">Close 💌</button></div></div>
+
+<footer>Made with love for Lawrencia, from the guy you saved as Lifeline ❤️</footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+
+/* floating hearts */
+var hs=$("hearts"),sy=["❤️","💗","💕","🌸","💖"];
+for(var i=0;i<16;i++){var s=document.createElement("span");s.textContent=sy[i%sy.length];s.style.left=Math.random()*100+"%";s.style.fontSize=(14+Math.random()*22)+"px";s.style.animationDuration=(9+Math.random()*10)+"s";s.style.animationDelay=(-Math.random()*14)+"s";hs.appendChild(s)}
+
+/* confetti */
+var cv=$("cf"),cx=cv.getContext("2d"),ps=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener("resize",size);
+function confetti(n){
+  var cols=["#ff7aa2","#e63956","#ffd1dc","#fff","#ff9eb8","#ffb703"];
+  for(var i=0;i<(n||160);i++)ps.push({x:innerWidth/2,y:innerHeight*.55,vx:(Math.random()-.5)*16,vy:-Math.random()*16-4,r:4+Math.random()*6,c:cols[i%cols.length],a:Math.random()*6,va:(Math.random()-.5)*.4,life:1});
+  if(!run){run=true;requestAnimationFrame(tick)}
+}
+function tick(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  ps=ps.filter(function(p){return p.life>0&&p.y<cv.height+20});
+  ps.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.vx*=.99;p.a+=p.va;p.life-=.006;cx.save();cx.globalAlpha=Math.max(p.life,0);cx.translate(p.x,p.y);cx.rotate(p.a);cx.fillStyle=p.c;cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});
+  if(ps.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}
+}
+
+function show(id){
+  ["s1","s2","s3"].forEach(function(x){$(x).classList.remove("on")});
+  $(id).classList.add("on");scrollTo(0,0);
+}
+
+/* STAGE 1 */
+var no=$("no"),tries=0,msgs=["Nice try 😂","Distance can’t save you","You can’t run from me","Just click YES na"];
+function dodge(e){
+  if(e){e.preventDefault();e.stopPropagation()}
+  if(tries===0){
+    var r=no.getBoundingClientRect();
+    no.style.position="fixed";no.style.left=r.left+"px";no.style.top=r.top+"px";
+    $("btnrow").style.minHeight="70px";
+  }
+  tries++;
+  var sc=tries>5?Math.max(.35,1-(tries-5)*.12):1;
+  no.style.transform="scale("+sc+")";
+  var w=no.offsetWidth,h=no.offsetHeight,pad=14;
+  var x=pad+Math.random()*Math.max(10,innerWidth-w-pad*2);
+  var y=pad+Math.random()*Math.max(10,innerHeight-h-pad*2-50);
+  no.style.left=x+"px";no.style.top=y+"px";
+  var t=$("tease");t.textContent=msgs[(tries-1)%msgs.length];t.classList.remove("pop");void t.offsetWidth;t.classList.add("pop");
+}
+no.addEventListener("pointerdown",dodge);
+no.addEventListener("click",dodge);
+no.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")dodge(e)});
+$("yes").addEventListener("click",function(){
+  no.classList.add("hide");
+  $("ask").classList.add("hide");
+  $("yeah").classList.remove("hide");$("yeah").classList.add("pop");
+  confetti(220);setTimeout(function(){confetti(120)},600);
+});
+$("to2").addEventListener("click",function(){show("s2")});
+
+/* STAGE 2 */
+var L=[
+ ["💌","Open when you’re bored","Then call me. You know I will pick up. Even if it’s just to say “I’m bored”, I will stay on the phone with you. That’s my job 😂❤️"],
+ ["💢","Open when you’re angry at me","Okay, I’m sorry in advance. I know I can’t hug you through the phone, but we can video call and I will make that sorry face you always laugh at. Don’t stay angry too long 🥺"],
+ ["🥹","Open when you miss me","I miss you too, Lawrencia. I miss seeing you in real life. But I love our video calls, seeing your face on my screen is my favourite part of the day. Soon we will see again for real."],
+ ["😂","Open when you want to laugh","Remember you saved me as Lifeline? That means I’m supposed to save you from boredom. So here is your rescue: Call me, let’s laugh like we always do on video call 😂"]
+],opened={};
+var grid=$("grid");
+L.forEach(function(l,i){
+  var b=document.createElement("button");b.className="env";
+  b.innerHTML='<span class="ic">'+l[0]+'</span><b>'+l[1]+'</b>';
+  b.addEventListener("click",function(){
+    $("lt").textContent=l[1];$("lp").textContent=l[2];$("modal").classList.add("on");
+    b.classList.add("done");b.querySelector(".ic").textContent="💖";opened[i]=1;
+    confetti(40);
+  });
+  grid.appendChild(b);
+});
+$("close").addEventListener("click",function(){
+  $("modal").classList.remove("on");
+  if(Object.keys(opened).length===4){$("to3").classList.remove("hide");$("to3").classList.add("pop")}
+});
+$("to3").addEventListener("click",function(){show("s3");loadQ()});
+
+/* STAGE 3 */
+var Q=[
+ {q:"What is my name on your phone?",o:["Lifeline","My Boyfriend","Best Boyfriend Ever"],c:0,m:"Exactly! Lifeline. I saw it 😂❤️"},
+ {q:"Who is the most beautiful girl in the world, even from far?",o:["Lawrencia","Lawrencia","Lawrencia"],c:-1,m:"There was only one answer 😂"},
+ {q:"What do we do when we miss each other?",o:["Call and video call","Send voice notes","All of the above"],c:2,m:"Correct! That’s why distance can’t beat us ❤️"}
+],qi=0,score=0;
+function loadQ(){
+  var q=Q[qi];
+  $("prog").textContent="Question "+(qi+1)+" of "+Q.length;
+  $("fb").textContent="";$("next").classList.add("hide");
+  var box=$("quiz");box.innerHTML='<p class="big" style="margin-bottom:10px"><b>'+q.q+'</b></p>';
+  q.o.forEach(function(t,i){
+    var b=document.createElement("button");b.className="opt";
+    b.textContent=String.fromCharCode(65+i)+") "+t;
+    b.addEventListener("click",function(){
+      var ok=q.c===-1||i===q.c;
+      Array.prototype.forEach.call(box.querySelectorAll(".opt"),function(x){x.classList.add("lock")});
+      if(ok){score++;b.classList.add("right");$("fb").textContent=q.m;confetti(60)}
+      else{$("fb").textContent="Hmm, not quite 😅 It was “"+q.o[q.c]+"”.";}
+      $("next").textContent=qi===Q.length-1?"See my result →":"Next →";
+      $("next").classList.remove("hide");$("next").classList.add("pop");
+    });
+    box.appendChild(b);
+  });
+}
+$("next").addEventListener("click",function(){
+  qi++;
+  if(qi<Q.length){loadQ();return}
+  $("quiz").innerHTML="";$("fb").textContent="";$("next").classList.add("hide");$("prog").textContent="";
+  var r=$("result"),pass=score>=2;
+  r.innerHTML=pass
+   ?'<div class="heart">💖</div><h1>See? You still remember me perfectly. I love you, Lawrencia ❤️</h1>'
+   :'<div class="heart">😂</div><h1>You failed? 😂 You owe me a long video call tonight!</h1>';
+  r.classList.remove("hide");r.classList.add("pop");
+  if(pass){confetti(240);setTimeout(function(){confetti(140)},700)}
+});
+})();
+</script>
+</body>
+</html>
